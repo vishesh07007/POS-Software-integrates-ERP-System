@@ -20,7 +20,7 @@ public class home {
 
     @GetMapping("/contact")
     public String contact() {
-        
+
         return "contact_us";
     }
 
