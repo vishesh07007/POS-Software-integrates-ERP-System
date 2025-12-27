@@ -1,6 +1,7 @@
 package com.software.ERP.controllers;
 
-import ch.qos.logback.core.model.Model;
+import com.software.ERP.loginCredentials.AdminLogin;
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
