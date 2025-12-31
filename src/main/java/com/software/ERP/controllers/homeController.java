@@ -26,6 +26,7 @@ public class homeController {
         return "Locate_us";
     }
 
+    
     @GetMapping("/contact")
     public String contact() {
 

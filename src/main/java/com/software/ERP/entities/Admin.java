@@ -1,4 +1,4 @@
-package com.software.ERP.entities;
-
-public class Admin {
-}
+//package com.software.ERP.entities;
+//
+//public class Admin {
+//}
