@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "Users")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,16 +18,16 @@ public class user {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column( nullable = false)
     private String name;
 
-    @Column(name = "phone", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String phone;
 
-    @Column(name = "email")
+
     private String email;
 
-    @Column(name = "address")
+
     private String address;
 
     public user(String name, String phone, String email, String address){
