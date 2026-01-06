@@ -13,7 +13,7 @@ public class medicines {
 
     private String name;
     private String description;
-    
+
 
 
 
