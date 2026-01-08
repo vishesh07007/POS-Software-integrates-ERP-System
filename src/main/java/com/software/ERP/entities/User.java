@@ -36,7 +36,7 @@ public class User {
 
     private String address;
 
-    @Column(nullable = false)
+    @Column(nullable = false)   // ADMIN,PHARMACIST,STAFF
     private String role;
 
 //    // Pre-persist to set creation time
