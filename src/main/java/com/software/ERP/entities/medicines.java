@@ -1,18 +1,22 @@
 package com.software.ERP.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class medicines {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
+    @Column(nullable = false)
     private String name;
-    private String description;
+
+
+    @Column(nullable = false)
+    private String genericName;  // e.g., "Paracetamol"
+
+    @Column(nullable = false, unique = true)
+    private String code;  // Unique medicine code (like SKU)
 
 
 
