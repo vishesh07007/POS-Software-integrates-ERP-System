@@ -3,7 +3,7 @@ package com.software.ERP.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class medicines {
+public class Medicine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
