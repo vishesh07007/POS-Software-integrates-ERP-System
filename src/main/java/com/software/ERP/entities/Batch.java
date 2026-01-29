@@ -26,7 +26,17 @@ public class Batch {
 
     private LocalDate expiryDate;
 
-    private Integer quantity;
+    @Column(nullable = false)
+    private Integer currentQuantity;  // Current stock
+
+    @Column(nullable = false)
+    private Integer initialQuantity;  // Original quantity received
+
     private Double costPrice;
+
     private Double sellingPrice;
+
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 }
