@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "sales")
@@ -35,6 +38,9 @@ public class SaleInvoice {
 
     private String paymentMode;  // CASH, CARD, UPI
 
-    
+//    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)   // have to take a look on sale class
+//    private List<SaleItem> items = new ArrayList<>();
+
+    private LocalDateTime createdAt;
 
 }
