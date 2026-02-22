@@ -23,6 +23,14 @@ public class SaleItem {
     @JoinColumn(name = "medicine_id", nullable = false)
     private Medicine medicine;
 
+    @ManyToOne
+    @JoinColumn(name = "sale_invoice_id", nullable = false)
+    private SaleInvoice saleInvoice;
+
+    @ManyToOne
+    @JoinColumn(name = "batch_id", nullable = false)
+    private Batch batch;  // Track which batch was sold
+
     @Column(nullable = false)
     private Integer quantity;
 
@@ -31,5 +39,12 @@ public class SaleItem {
 
     private Double subtotal;  // quantity * sellingPrice
 
-    
+    @PrePersist
+    @PreUpdate
+
+    protected void calculateSubtotal() {
+        this.subtotal = this.quantity * this.sellingPrice;
+    }
+
+
 }
