@@ -4,9 +4,7 @@ import com.software.ERP.entities.Medicine;
 import com.software.ERP.repository.MedicineRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,12 +14,20 @@ import java.util.List;
 public class MedicineController {
 
     @Autowired
-    private MedicineRepo medicineRepository;
+    private MedicineRepo medicineRepo;
 
     @GetMapping
     public List<Medicine> getAllMedicines() {
-        return medicineRepository.findAll();
+        return medicineRepo.findAll();
     }
+
+    @PostMapping
+    public Medicine addMedicine(@RequestBody Medicine medicine) {
+        return medicineRepo.save(medicine);
+    }
+
+    
+
 
 
 
