@@ -17,9 +17,9 @@ public class Batch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @ManyToMany
+    @ManyToOne
     private Medicine medicine;
 
     private String batchNumber;

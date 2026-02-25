@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,36 +17,14 @@ import java.time.LocalDate;
 
 public class PurchaseOrder {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "purchase_order_id", nullable = false)
-    private PurchaseOrder purchaseOrder ;
+    private LocalDate orderDate;
+    private Double totalAmount;
 
     @ManyToOne
-    @JoinColumn(name = "medicine_id", nullable = false)
-    private Medicine medicine;
+    private Supplier supplier;  // who you bought from
 
-    @Column(nullable = false)
-    private String batchNumber;  // From supplier
-
-    private LocalDate expiryDate;  // From supplier
-
-    @Column(nullable = false)
-    private Integer quantity;
-
-    @Column(nullable = false)
-    private Double purchasePrice;  // Per unit cost
-
-    @Column(nullable = false)
-    private Double sellingPrice;  // MRP for this batch
-
-    private Double gstPercentage;
-
-    private Double itemTotal;  // quantity * purchasePrice
-
-
-
-
+    @OneToMany(mappedBy = "purchaseOrder")
+    private List<PurchaseOrderItem> items;
 }

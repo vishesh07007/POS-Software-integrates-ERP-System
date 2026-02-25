@@ -38,9 +38,13 @@ public class SaleInvoice {
 
     private String paymentMode;  // CASH, CARD, UPI
 
-//    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)   // have to take a look on sale class
-//    private List<SaleItem> items = new ArrayList<>();
-
+   @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)   // have to take a look on sale class
+    private List<SaleItem> items = new ArrayList<>();
     private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
 
 }

@@ -39,18 +39,18 @@ public class User {
     @Column(nullable = false)   // ADMIN,PHARMACIST,STAFF
     private String role;
 
-//    // Pre-persist to set creation time
-//    @PrePersist
-//    protected void onCreate() {
-//        createdAt = LocalDateTime.now();
-//        updatedAt = LocalDateTime.now();
-//    }
-//
-//    // Pre-update to set update time
-//    @PreUpdate
-//    protected void onUpdate() {
-//        updatedAt = LocalDateTime.now();
-//    }
+    // Pre-persist to set creation time
+    @PrePersist
+    protected void onCreate() {
+        LocalDateTime createdAt = LocalDateTime.now();
+        LocalDateTime updatedAt = LocalDateTime.now();
+    }
+
+    // Pre-update to set update time
+    @PreUpdate
+    protected void onUpdate() {
+        LocalDateTime updatedAt = LocalDateTime.now();
+    }
 
 
 }
