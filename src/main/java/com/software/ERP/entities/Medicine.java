@@ -1,8 +1,13 @@
 package com.software.ERP.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Medicine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

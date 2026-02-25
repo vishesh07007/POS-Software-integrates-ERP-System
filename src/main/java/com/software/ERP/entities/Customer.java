@@ -24,6 +24,9 @@ public class Customer {
     private String email;
     private String address;
 
+    @Column(nullable = false, unique = true)
+    private String phone;
+
     private String customerType; //patient OR big party
 
     private LocalDate firstVisitDate;
