@@ -26,11 +26,22 @@ public class MedicineController {
         return medicineRepo.save(medicine);
     }
 
+    @GetMapping("/{id}")
+    public Medicine getMedicine(@PathVariable Long id){
+        return medicineRepo.findById(id).orElse(null);
+    }
+
+    @GetMapping("/search")
+    public List<Medicine> searchByName(@RequestParam String name){
+        return medicineRepo.findByNameContainingIgnoreCase(name);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteMedicine(@PathVariable Long id){
+        medicineRepo.deleteById(id);
+        return "Deleted medicine: " + id;
+    }
+
+
     
-
-
-
-
-
-
 }
