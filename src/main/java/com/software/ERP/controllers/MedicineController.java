@@ -36,11 +36,10 @@ public class MedicineController {
         return medicineRepo.findByNameContainingIgnoreCase(name);
     }
 
+
     @DeleteMapping("/{id}")
     public String deleteMedicine(@PathVariable Long id){
         medicineRepo.deleteById(id);
         return "Deleted medicine: " + id;
     }
-
-
 }
