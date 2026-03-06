@@ -39,6 +39,10 @@ public class User {
     @Column(nullable = false)   // ADMIN,PHARMACIST,STAFF
     private String role;
 
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
     // Pre-persist to set creation time
     @PrePersist
     protected void onCreate() {

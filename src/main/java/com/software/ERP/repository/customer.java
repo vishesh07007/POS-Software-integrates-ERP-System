@@ -1,4 +1,4 @@
-package com.software.ERP.repository;
-
-public interface customer {
-}
+//package com.software.ERP.repository;
+//
+//public interface customer {
+//}

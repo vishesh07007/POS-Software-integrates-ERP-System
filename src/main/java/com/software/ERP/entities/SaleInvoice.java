@@ -32,13 +32,13 @@ public class SaleInvoice {
 
     @Column(nullable = false)
     private LocalDate saleDate;
-
+    
     @Column(nullable = false)
     private Double totalAmount;
 
     private String paymentMode;  // CASH, CARD, UPI
 
-   @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)   // have to take a look on sale class
+   @OneToMany(mappedBy = "saleInvoice", cascade = CascadeType.ALL)   // have to take a look on sale class
     private List<SaleItem> items = new ArrayList<>();
     private LocalDateTime createdAt;
 
