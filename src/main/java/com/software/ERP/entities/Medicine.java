@@ -32,6 +32,6 @@ public class Medicine {
     private String code;  // Unique medicine code (like SKU)
 
     @Column(columnDefinition = "boolean default true")
-    private boolean active = true;   // Instead of deleting a medicine: You deactivate it, and ensures new medicines are active by default
+    private Boolean active = true;   // Instead of deleting a medicine: You deactivate it, and ensures new medicines are active by default
 
 }

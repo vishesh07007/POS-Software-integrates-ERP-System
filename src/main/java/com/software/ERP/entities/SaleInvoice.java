@@ -32,7 +32,7 @@ public class SaleInvoice {
 
     @Column(nullable = false)
     private LocalDate saleDate;
-    
+
     @Column(nullable = false)
     private Double totalAmount;
 
