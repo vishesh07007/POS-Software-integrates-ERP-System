@@ -29,7 +29,13 @@ public class Medicine {
     private String genericName;  // e.g, "Paracetamol"
 
     @Column(nullable = false, unique = true)
-    private String code;  // Unique medicine code (like SKU)
+    private String code;  // Unique medicine code (like SKU) , two same salt , diff name medicine have diff SKU
+
+    @Column(length = 8)
+    private String hsnCode;  // e.g., "30049011" for medicine, HSN is unique code by govt for perticular salt, for gst
+
+    @Column(nullable = false)
+    private Double gstPercentage;
 
     @Column(columnDefinition = "boolean default true")
     private Boolean active = true;   // Instead of deleting a medicine: You deactivate it, and ensures new medicines are active by default

@@ -1,5 +1,5 @@
 package com.software.ERP.repository;
-
+1
 import com.software.ERP.entities.Medicine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -14,5 +14,7 @@ public interface MedicineRepo extends JpaRepository<Medicine, Long> {
     List<Medicine> findByCategory(String category);
 
     List<Medicine> findByManufacturer(String manufacturer);
+
+    Medicine findByCode(String code);
 
 }

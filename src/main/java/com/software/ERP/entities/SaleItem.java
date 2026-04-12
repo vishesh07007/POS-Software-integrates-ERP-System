@@ -37,13 +37,27 @@ public class SaleItem {
     @Column(nullable = false)
     private Double sellingPrice;  // Price of one unit
 
+    @Column(nullable = false)
+    private Double gstPercentage;  // e.g., 12.0 or 18.0
+
+    private Double gstAmount;      // calculated GST amount
+
+    private Double totalAmount;    // subtotal + gstAmount
+
     private Double subtotal;  // quantity * sellingPrice
 
     @PrePersist
     @PreUpdate
 
     protected void calculateSubtotal() {
+        // Calculate subtotal (price × quantity)
         this.subtotal = this.quantity * this.sellingPrice;
+
+        // Calculate GST amount
+        this.gstAmount = this.subtotal * (this.gstPercentage / 100);
+
+        // Calculate total (subtotal + GST)
+        this.totalAmount = this.subtotal + this.gstAmount;
     }
 
 
