@@ -1,5 +1,5 @@
 package com.software.ERP.repository;
-1
+
 import com.software.ERP.entities.Medicine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

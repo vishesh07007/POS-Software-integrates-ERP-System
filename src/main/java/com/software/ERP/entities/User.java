@@ -40,20 +40,24 @@ public class User {
     private String role;
 
 
+    @Column(nullable = false)
+    private String password;
+
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     // Pre-persist to set creation time
     @PrePersist
     protected void onCreate() {
-        LocalDateTime createdAt = LocalDateTime.now();
-        LocalDateTime updatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     // Pre-update to set update time
     @PreUpdate
     protected void onUpdate() {
-        LocalDateTime updatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
 
