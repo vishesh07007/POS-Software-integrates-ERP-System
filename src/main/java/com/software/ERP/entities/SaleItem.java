@@ -49,7 +49,7 @@ public class SaleItem {
     @PrePersist
     @PreUpdate
 
-    protected void calculateSubtotal() {
+    public void calculateSubtotal() {
         // Calculate subtotal (price × quantity)
         this.subtotal = this.quantity * this.sellingPrice;
 
