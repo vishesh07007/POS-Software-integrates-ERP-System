@@ -2,7 +2,6 @@ package com.software.ERP.controllers;
 
 
 import com.software.ERP.entities.SaleInvoice;
-import com.software.ERP.repository.SaleInvoiceRepo;
 import com.software.ERP.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +25,8 @@ public class SaleController {
     public List<SaleInvoice> getAllSales() {
         return saleService.getAllSales();
     }
+
+
 
 
 

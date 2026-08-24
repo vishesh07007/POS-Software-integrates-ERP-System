@@ -35,6 +35,12 @@ public class MedicineService {
         return medicineRepo.save(medicine);
     }
 
+    public List<Medicine> searchByName(String name) {
+        return medicineRepo.findByNameContainingIgnoreCase(name);
+    }
 
+    public void deleteMedicine(Long id) {
+        medicineRepo.deleteById(id);
+    }
 
 }

@@ -38,8 +38,9 @@ public class SaleInvoice {
 
     private String paymentMode;  // CASH, CARD, UPI
 
-   @OneToMany(mappedBy = "saleInvoice", cascade = CascadeType.ALL)   // have to take a look on sale class
+   @OneToMany(mappedBy = "saleInvoice", cascade = CascadeType.ALL)
     private List<SaleItem> items = new ArrayList<>();
+   
     private LocalDateTime createdAt;
 
     @PrePersist
